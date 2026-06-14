@@ -1,0 +1,5 @@
+wallpaper {
+ monitor = DP2
+ path = /home/mo/download/nazuna.png
+ file_mode = cover
+}
