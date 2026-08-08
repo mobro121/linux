@@ -43,8 +43,9 @@ $menu = hyprlauncher
 # Or execute your favorite apps at launch like this:
 
 exec-once = waybar
-exec-once = swww-daemon
-exec-once = waypaper --restore
+exec-once = swww-daemon &
+exec-once = firefox
+exec-once = waypaper
 
 
 #############################
@@ -194,8 +195,8 @@ dwindle {
 
 # https://wiki.hypr.land/Configuring/Variables/#misc
 misc {
-    force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
-    disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
+    force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
 }
 
 
@@ -205,7 +206,7 @@ misc {
 
 # https://wiki.hypr.land/Configuring/Variables/#input
 input {
-    kb_layout = gb
+    kb_layout = us
     kb_variant =
     kb_model =
     kb_options =
@@ -239,7 +240,7 @@ device {
 $mainMod = SUPER # Sets "Windows" key as main modifier
 
 # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-bind = $mainMod, Y, exec, $terminal
+bind = $mainMod, Q, exec, $terminal
 bind = $mainMod, C, killactive,
 bind = $mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit
 bind = $mainMod, E, exec, $fileManager
@@ -249,10 +250,6 @@ bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, layoutmsg, togglesplit # dwindle
 bind =  $mainMod, SPACE ,exec,rofi -show drun
 bind = $mainMod,T,exec,kitty --hold fastfetch
-bind = $mainMod,Q,exec,ghostty
-bind = $mainMod, Print, exec,flameshot gui
-bind = $mainMod,],exec, command -v brightnessctl set +10%
-bind = $mainMod,],exec, command -v brightnessctl set -10%
 
 
 # Move focus with mainMod + arrow keys
